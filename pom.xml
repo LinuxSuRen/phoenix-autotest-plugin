@@ -16,7 +16,7 @@
 
     <name>Pipeline: Phoenix AutoTest Plugin</name>
     <description>Phoenix AutoTest Plugin</description>
-    <url>https://github.com/suren-jenkins/phoenix-autotest</url>
+    <url>https://wiki.jenkins.io/display/JENKINS/Phoenix+Autotest+Plugin</url>
 
     <properties>
         <jenkins.version>2.7.3</jenkins.version>
