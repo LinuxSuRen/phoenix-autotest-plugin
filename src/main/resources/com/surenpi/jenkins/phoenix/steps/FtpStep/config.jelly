@@ -34,7 +34,7 @@ THE SOFTWARE.
     <f:entry field="credentialsId" title="CredentialsId">
         <c:select/>
     </f:entry>
-    <f:entry field="srcFile" title="SrcFile">
+    <f:entry field="srcFile" title="SourceFile">
         <f:textbox/>
     </f:entry>
     <f:entry field="targetDir" title="TargetDir">
