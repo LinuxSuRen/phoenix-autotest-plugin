@@ -17,10 +17,7 @@ import org.jenkinsci.plugins.durabletask.DurableTask;
 
 import javax.annotation.CheckForNull;
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,7 +69,7 @@ public class DurableJdbcTask extends DurableTask implements Serializable
 
                 if(jdbcStep.isText())
                 {
-                    reader = new InputStreamReader(new ByteArrayInputStream(jdbcStep.getSql().getBytes()));
+                    reader = new InputStreamReader(new ByteArrayInputStream(jdbcStep.getSql().getBytes(jdbcStep.getEncoding())));
                 }
                 else
                 {
@@ -81,9 +78,9 @@ public class DurableJdbcTask extends DurableTask implements Serializable
 
                 runner.runScript(reader);
             }
-            catch (Exception ex)
+            catch (SQLException e)
             {
-                logger.println(ex.getLocalizedMessage());
+                logger.println(e.getMessage());
             }
             finally
             {

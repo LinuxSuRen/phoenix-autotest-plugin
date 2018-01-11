@@ -35,6 +35,7 @@ public class JdbcStep extends DurableStep implements Serializable
     private String url;
     private String credentialsId;
     private String sql;
+    private String encoding = "utf-8";
 
     private boolean isText = false;
 
@@ -125,5 +126,16 @@ public class JdbcStep extends DurableStep implements Serializable
     public void setText(boolean text)
     {
         isText = text;
+    }
+
+    public String getEncoding()
+    {
+        return encoding;
+    }
+
+    @DataBoundSetter
+    public void setEncoding(String encoding)
+    {
+        this.encoding = encoding;
     }
 }

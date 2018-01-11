@@ -16,7 +16,7 @@ import java.util.Set;
  * 修改属性配置文件的流水线步骤
  * @author suren
  */
-public class WritePropertiesStep extends Step
+public class WritePropertiesStep extends Step implements Serializable
 {
     private final String file;
     private final Object data;
