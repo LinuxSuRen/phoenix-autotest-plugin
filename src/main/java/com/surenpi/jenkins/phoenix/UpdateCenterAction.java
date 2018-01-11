@@ -9,6 +9,7 @@ import jenkins.model.TransientActionFactory;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
@@ -55,7 +56,6 @@ public class UpdateCenterAction extends TransientActionFactory<LocalPluginManage
         return LocalPluginManager.class;
     }
 
-    @Nonnull
     @Override
     public Collection<? extends Action> createFor(@Nonnull LocalPluginManager target)
     {
@@ -73,6 +73,6 @@ public class UpdateCenterAction extends TransientActionFactory<LocalPluginManage
             e.printStackTrace();
         }
 
-        return null;
+        return new ArrayList<>();
     }
 }

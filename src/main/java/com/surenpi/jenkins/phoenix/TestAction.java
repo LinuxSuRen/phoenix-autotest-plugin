@@ -10,10 +10,7 @@ import org.jenkinsci.plugins.workflow.job.WorkflowJob;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 @Extension
 public class TestAction extends TransientActionFactory<WorkflowJob> implements Action
@@ -73,7 +70,6 @@ public class TestAction extends TransientActionFactory<WorkflowJob> implements A
         return WorkflowJob.class;
     }
 
-    @Nonnull
     @Override
     public Collection<? extends Action> createFor(@Nonnull WorkflowJob workflowJob)
     {
@@ -91,6 +87,6 @@ public class TestAction extends TransientActionFactory<WorkflowJob> implements A
             e.printStackTrace();
         }
 
-        return null;
+        return new ArrayList<>();
     }
 }

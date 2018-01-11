@@ -18,12 +18,15 @@ import java.util.Set;
  */
 public class WritePropertiesStep extends Step
 {
-    private String file;
-    private Object data;
+    private final String file;
+    private final Object data;
 
     @DataBoundConstructor
     public WritePropertiesStep(String file, Object data)
     {
+        this.file = file;
+        this.data = data;
+
         if(file == null || "".equals(file.trim()))
         {
             throw new IllegalArgumentException("file parameter must be provided to modifyProperties");
@@ -67,8 +70,6 @@ public class WritePropertiesStep extends Step
         @Override
         public boolean start() throws Exception
         {
-            long free = new File("/").getFreeSpace();
-            PrintStream logger = stepContext.get(TaskListener.class).getLogger();
             Object proData = modifyPropertiesStep.data;
             File file = new File(modifyPropertiesStep.file);
 
@@ -113,5 +114,15 @@ public class WritePropertiesStep extends Step
         {
 
         }
+    }
+
+    public String getFile()
+    {
+        return file;
+    }
+
+    public Object getData()
+    {
+        return data;
     }
 }

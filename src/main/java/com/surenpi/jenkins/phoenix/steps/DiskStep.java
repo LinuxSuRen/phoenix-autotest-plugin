@@ -1,6 +1,7 @@
 package com.surenpi.jenkins.phoenix.steps;
 
 import hudson.Extension;
+import hudson.FilePath;
 import hudson.model.TaskListener;
 import org.jenkinsci.plugins.workflow.steps.*;
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -9,6 +10,8 @@ import org.kohsuke.stapler.DataBoundSetter;
 import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.util.Collections;
 import java.util.Set;
 
@@ -18,6 +21,7 @@ import java.util.Set;
  */
 public class DiskStep extends Step
 {
+    private String root = "/";
     private long threshold;
 
     @DataBoundConstructor
@@ -67,7 +71,7 @@ public class DiskStep extends Step
         @Override
         public boolean start() throws Exception
         {
-            long free = new File("/").getFreeSpace();
+            long free = new File(diskStep.getRoot()).getFreeSpace();
             PrintStream logger = stepContext.get(TaskListener.class).getLogger();
             logger.println("free: " + free + "; threshold: " + diskStep.getThreshold());
 
@@ -95,8 +99,20 @@ public class DiskStep extends Step
         return threshold;
     }
 
+    @DataBoundSetter
     public void setThreshold(long threshold)
     {
         this.threshold = threshold;
+    }
+
+    public String getRoot()
+    {
+        return root;
+    }
+
+    @DataBoundSetter
+    public void setRoot(String root)
+    {
+        this.root = root;
     }
 }

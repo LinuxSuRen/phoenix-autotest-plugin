@@ -12,6 +12,7 @@ import org.kohsuke.stapler.export.ExportedBean;
 
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.*;
 
@@ -83,7 +84,6 @@ public class ComputerAction extends TransientActionFactory<SlaveComputer> implem
         return SlaveComputer.class;
     }
 
-    @Nonnull
     @Override
     public Collection<? extends Action> createFor(@Nonnull SlaveComputer computer)
     {
@@ -94,14 +94,16 @@ public class ComputerAction extends TransientActionFactory<SlaveComputer> implem
             instance.computer = this.computer;
 
             return Collections.singleton(instance);
-        } catch (InstantiationException e)
+        }
+        catch (InstantiationException e)
         {
             e.printStackTrace();
-        } catch (IllegalAccessException e)
+        }
+        catch (IllegalAccessException e)
         {
             e.printStackTrace();
         }
 
-        return null;
+        return new ArrayList<>();
     }
 }

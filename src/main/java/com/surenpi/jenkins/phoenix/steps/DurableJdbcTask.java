@@ -65,10 +65,9 @@ public class DurableJdbcTask extends DurableTask implements Serializable
             String password = upCre.getPassword().getPlainText();
 
             Reader reader = null;
-            try(Connection conn = DriverManager.getConnection(jdbcStep.getUrl(), userName, password))
+            try(Connection conn = DriverManager.getConnection(jdbcStep.getUrl(), userName, password);
+                Statement statement = conn.createStatement())
             {
-                Statement stage = conn.createStatement();
-
                 ScriptRunner runner = new ScriptRunner(conn);
 
                 if(jdbcStep.isText())
@@ -101,10 +100,9 @@ public class DurableJdbcTask extends DurableTask implements Serializable
     @Override
     public void captureOutput() throws UnsupportedOperationException
     {
-        System.out.println("sdfds");
     }
 
-    class JdbcController extends Controller
+    public static class JdbcController extends Controller
     {
 
         @Override
