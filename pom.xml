@@ -36,6 +36,14 @@
         <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     </scm>
 
+    <developers>
+        <developer>
+            <id>surenpi</id>
+            <name>SuRen</name>
+            <email>zxjlwt@126.com</email>
+        </developer>
+    </developers>
+
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
