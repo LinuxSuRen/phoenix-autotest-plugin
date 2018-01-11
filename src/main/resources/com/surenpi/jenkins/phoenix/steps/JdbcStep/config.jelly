@@ -25,13 +25,13 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:c="/lib/credentials">
-    <f:entry field="url" title="url">
+    <f:entry field="url" title="URL">
         <f:textbox/>
     </f:entry>
-    <f:entry field="credentialsId" title="credentialsId">
+    <f:entry field="credentialsId" title="CredentialsId">
         <c:select/>
     </f:entry>
-    <f:entry field="sql" title="sql">
+    <f:entry field="sql" title="SQL">
         <f:textbox/>
     </f:entry>
 </j:jelly>
