@@ -19,16 +19,15 @@ import java.io.IOException;
  */
 class WithSCMExecution extends StepExecution
 {
-    private final StepContext context;
     private final WithSCMStep withSCMStep;
     private final FilePath ws;
 
     public WithSCMExecution(StepContext context, WithSCMStep withSCMStep) throws IOException, InterruptedException
     {
-        this.context = context;
+        super(context);
         this.withSCMStep = withSCMStep;
 
-        ws = context.get(FilePath.class);;
+        ws = getContext().get(FilePath.class);;
     }
 
     @Override
@@ -47,11 +46,11 @@ class WithSCMExecution extends StepExecution
     {
         SCM scm = withSCMStep.getScm();
 
-        Run<?, ?> run = context.get(Run.class);
+        Run<?, ?> run = getContext().get(Run.class);
         SCMRevisionState baseline = null;
         File changelogFile = null;
-        Launcher launcher = context.get(Launcher.class);
-        TaskListener taskListener = context.get(TaskListener.class);
+        Launcher launcher = getContext().get(Launcher.class);
+        TaskListener taskListener = getContext().get(TaskListener.class);
 
         scm.checkout(run, launcher, tempBinDir, taskListener, changelogFile, baseline);
     }
