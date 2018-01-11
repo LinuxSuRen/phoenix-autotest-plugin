@@ -13,25 +13,15 @@ import java.util.Collections;
 import java.util.Set;
 
 /**
+ * Current disk usage warning threshold
  * @author suren
  */
 public class DiskStep extends Step
 {
-    private long need;
+    private long threshold;
 
     @DataBoundConstructor
     public DiskStep(){}
-
-    public long getNeed()
-    {
-        return need;
-    }
-
-    @DataBoundSetter
-    public void setNeed(long need)
-    {
-        this.need = need;
-    }
 
     @Override
     public StepExecution start(StepContext context) throws Exception
@@ -79,9 +69,9 @@ public class DiskStep extends Step
         {
             long free = new File("/").getFreeSpace();
             PrintStream logger = stepContext.get(TaskListener.class).getLogger();
-            logger.println("free: " + free + "; need: " + diskStep.getNeed());
+            logger.println("free: " + free + "; threshold: " + diskStep.getThreshold());
 
-            if(free > diskStep.getNeed())
+            if(free > diskStep.getThreshold())
             {
                 stepContext.onSuccess("success");
             }
@@ -98,5 +88,15 @@ public class DiskStep extends Step
         {
 
         }
+    }
+
+    public long getThreshold()
+    {
+        return threshold;
+    }
+
+    public void setThreshold(long threshold)
+    {
+        this.threshold = threshold;
     }
 }
