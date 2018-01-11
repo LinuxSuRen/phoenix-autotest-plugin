@@ -25,18 +25,18 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-    <f:entry field="srcFile" title="srcFile">
+    <f:entry field="srcFile" title="SourceFile">
         <f:textbox/>
     </f:entry>
-    <f:entry field="dstFile" title="dstFile">
+    <f:entry field="dstFile" title="TargetFile">
         <f:textbox/>
     </f:entry>
     <f:advanced>
-        <f:entry field="keepMeta" title="keepMeta">
-            <f:textbox/>
+        <f:entry field="keepMeta" title="KeepMeta">
+            <f:checkbox/>
         </f:entry>
-        <f:entry field="recursive" title="recursive">
-            <f:textbox/>
+        <f:entry field="recursive" title="Recursive">
+            <f:checkbox/>
         </f:entry>
     </f:advanced>
 </j:jelly>
