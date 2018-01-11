@@ -1,8 +1,8 @@
 package com.surenpi.jenkins.phoenix.steps;
 
-import com.surenpi.jenkins.pipeline.step.DurableExecution;
-import com.surenpi.jenkins.pipeline.step.DurableStep;
-import com.surenpi.jenkins.pipeline.step.DurableTaskStepDescriptor;
+import com.surenpi.jenkins.phoenix.DurableExecution;
+import com.surenpi.jenkins.phoenix.DurableStep;
+import com.surenpi.jenkins.phoenix.DurableTaskStepDescriptor;
 import hudson.Extension;
 import org.jenkinsci.plugins.durabletask.DurableTask;
 import org.jenkinsci.plugins.workflow.steps.StepContext;

@@ -5,7 +5,7 @@ import com.cloudbees.plugins.credentials.CredentialsMatchers;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.common.UsernamePasswordCredentials;
 import com.cloudbees.plugins.credentials.domains.DomainRequirement;
-import com.surenpi.jenkins.pipeline.step.DurableController;
+import com.surenpi.jenkins.phoenix.DurableController;
 import hudson.EnvVars;
 import hudson.FilePath;
 import hudson.Launcher;
