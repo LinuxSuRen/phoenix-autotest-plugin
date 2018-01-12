@@ -1,4 +1,5 @@
 <?jelly escape-by-default='true'?>
 <div>
-    WebUI autotest pipeline support
+    This plugin provide a set of DevOps pipeline step, i.e CopyStep let you copy a file from master to current node.
+    We also have TimeStep, FtpStep, JdbcStep, FtpStep, DiskStep, WithSCMStep.
 </div>
