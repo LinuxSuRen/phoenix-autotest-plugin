@@ -1,7 +1,6 @@
 package com.surenpi.jenkins.phoenix.steps;
 
 import hudson.Extension;
-import hudson.FilePath;
 import hudson.model.TaskListener;
 import org.jenkinsci.plugins.workflow.steps.*;
 import org.kohsuke.stapler.DataBoundConstructor;
@@ -10,8 +9,6 @@ import org.kohsuke.stapler.DataBoundSetter;
 import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.PrintStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
 import java.util.Collections;
 import java.util.Set;
 
@@ -53,7 +50,7 @@ public class DiskStep extends Step
         @Override
         public String getDisplayName()
         {
-            return "disk";
+            return "Disk Threshold";
         }
     }
 

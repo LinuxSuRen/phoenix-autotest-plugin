@@ -70,7 +70,7 @@ public class JdbcStep extends DurableStep implements Serializable
         @Override
         public String getDisplayName()
         {
-            return "Execute sql script through jdbc.";
+            return "JdbcStep";
         }
 
         public ListBoxModel doFillCredentialsIdItems() {

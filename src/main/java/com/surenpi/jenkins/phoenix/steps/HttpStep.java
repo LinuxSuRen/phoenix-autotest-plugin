@@ -53,7 +53,7 @@ public class HttpStep extends DurableStep implements Serializable
         @Override
         public String getDisplayName()
         {
-            return "http tool";
+            return "HttpStep";
         }
     }
 

@@ -14,6 +14,7 @@ import org.jenkinsci.plugins.workflow.steps.StepExecution;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 
+import javax.annotation.Nonnull;
 import java.util.Set;
 
 /**
@@ -55,6 +56,13 @@ public class TimeStep extends Step
         public String getFunctionName()
         {
             return "time";
+        }
+
+        @Nonnull
+        @Override
+        public String getDisplayName()
+        {
+            return "TimeStep";
         }
     }
 

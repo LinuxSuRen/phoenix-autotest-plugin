@@ -77,7 +77,7 @@ public class FtpStep extends DurableStep implements Serializable
         @Override
         public String getDisplayName()
         {
-            return "ftp publish tool";
+            return "FtpStep";
         }
     }
 
