@@ -2,7 +2,7 @@
 <!--
 The MIT License
 
-Copyright 2014 suren <zxjlwt@126.com>
+Copyright 2018, suren <zxjlwt@126.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,7 +25,10 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
-    <f:entry field="text" title="Temporary directory">
+    <f:entry field="xmlFile" title="XmlFile">
+        <f:textbox/>
+    </f:entry>
+    <f:entry field="nodeMap" title="NodeMap">
         <f:textbox/>
     </f:entry>
 </j:jelly>
