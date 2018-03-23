@@ -7,15 +7,16 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class XmlUtilsTest
 {
     @Test
-    public void parse() throws DocumentException
+    public void parse() throws DocumentException, IOException
     {
-        File xmlFile = new File("/home/surenpi/IdeaProjects/Github/phoenix.plugin/pom.xml");
+        File xmlFile = new File("pom.xml");
         Map<String, String> list = new HashMap<>();
         list.put("version", "/*[name()='project']/*[name()='version']");
         list.put("packaging", "/*[name()='project']/*[name()='packaging']");
