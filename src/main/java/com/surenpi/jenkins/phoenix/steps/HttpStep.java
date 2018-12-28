@@ -22,6 +22,7 @@ public class HttpStep extends DurableStep implements Serializable
 
     private final String url;
     private String method;
+    private String responseBody;
 
     @DataBoundConstructor
     public HttpStep(String url)
@@ -71,5 +72,14 @@ public class HttpStep extends DurableStep implements Serializable
     public void setMethod(String method)
     {
         this.method = method;
+    }
+
+    public String getResponseBody() {
+        return responseBody;
+    }
+
+    @DataBoundSetter
+    public void setResponseBody(String responseBody) {
+        this.responseBody = responseBody;
     }
 }

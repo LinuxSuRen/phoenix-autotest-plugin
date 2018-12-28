@@ -2,7 +2,7 @@
 <!--
 The MIT License
 
-Copyright 2017, linuxsuren
+Copyright 2018, linuxsuren
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,10 +28,7 @@ THE SOFTWARE.
     <f:entry field="url" title="URL">
         <f:textbox/>
     </f:entry>
-    <f:entry field="credentialsId" title="CredentialsId">
+    <f:entry field="method" title="Method">
         <c:select/>
-    </f:entry>
-    <f:entry field="sql" title="SQL">
-        <f:textbox/>
     </f:entry>
 </j:jelly>

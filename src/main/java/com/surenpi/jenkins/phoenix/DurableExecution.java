@@ -102,7 +102,6 @@ public class DurableExecution extends AbstractStepExecutionImpl implements Runna
                 ws.mkdirs();
             }
 
-            System.out.println(ws.getBaseName() + "==" + ws.getName() + "===" + ws.getRemote() + "==" + ws.isDirectory());
             LOGGER.log(Level.FINE, ws.getBaseName() + "==" + ws.getName() + "===" + ws.getRemote() + "==" + ws.isDirectory());
         }
         catch (IOException e)

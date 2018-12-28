@@ -31,3 +31,5 @@ release.properties
 
 # maven stuff
 target
+
+.DS_Store
