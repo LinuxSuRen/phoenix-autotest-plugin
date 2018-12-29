@@ -25,6 +25,8 @@ import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * @author suren
@@ -49,11 +51,15 @@ public class DurableHttpTask extends DurableTask implements Serializable
 
         try
         {
-            uri = new URI(httpStep.getUrl());
+            String url = httpStep.getUrl().replace(" ", "%20");
+
+            uri = new URL(url).toURI();
         }
         catch (URISyntaxException e)
         {
             e.printStackTrace();
+
+            throw new IOException("build http url error.", e);
         }
 
         if("post".equalsIgnoreCase(method))
