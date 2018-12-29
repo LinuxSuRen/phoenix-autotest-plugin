@@ -24,11 +24,14 @@ THE SOFTWARE.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:c="/lib/credentials">
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
     <f:entry field="url" title="URL">
         <f:textbox/>
     </f:entry>
-    <f:entry field="method" title="Method">
-        <c:select/>
+    <f:entry field="method" title="${%Method}">
+        <f:select/>
+    </f:entry>
+    <f:entry field="responseBody" title="${%Response Body}">
+        <f:textbox/>
     </f:entry>
 </j:jelly>
